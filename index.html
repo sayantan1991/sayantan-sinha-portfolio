@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dr. Sayantan Sinha | AI & Machine Learning Educator</title>
+<meta name="description" content="AI and machine learning educator, technical trainer and researcher at GLA University. Track Owner, Business Informatics.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#EDF1F4; --surface:#F8FAFB; --ink:#13233A; --muted:#566478; --line:#C9D3DC;
+  --signal:#0B7C80; --warm:#C97B12;
+  --display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --body:"Newsreader",Georgia,"Times New Roman",serif;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){--bg:#0E1A2B; --surface:#14233A; --ink:#E6EDF4; --muted:#9AABBF; --line:#2A3B54; --signal:#4FC7C9; --warm:#E8A84A; color-scheme:dark;}
+}
+:root[data-theme="dark"]{--bg:#0E1A2B; --surface:#14233A; --ink:#E6EDF4; --muted:#9AABBF; --line:#2A3B54; --signal:#4FC7C9; --warm:#E8A84A; color-scheme:dark;}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 72px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:1.15rem;line-height:1.65}
+a{color:var(--signal);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:3px solid var(--warm);outline-offset:3px;border-radius:2px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 clamp(20px,5vw,48px)}
+header.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:30}
+.nav .wrap{display:flex;gap:24px;align-items:center;justify-content:space-between;height:56px}
+.nav b{font-family:var(--display);font-weight:700;font-size:1rem;letter-spacing:.01em}
+.nav nav{display:flex;gap:20px;overflow-x:auto;scrollbar-width:none}
+.nav nav a{font-family:var(--display);font-size:.92rem;font-weight:500;color:var(--muted);text-decoration:none;white-space:nowrap}
+.nav nav a:hover{color:var(--ink)}
+h1,h2,h3{font-family:var(--display);line-height:1.1;margin:0}
+h1{font-size:clamp(2.6rem,7.5vw,5.2rem);font-weight:700;letter-spacing:-.025em}
+h2{font-size:clamp(1.7rem,3.6vw,2.3rem);font-weight:700;letter-spacing:-.015em;margin-bottom:28px}
+h3{font-size:1.1rem;font-weight:700}
+section{padding:72px 0;border-top:1px solid var(--line)}
+.hero{padding:56px 0 40px;border:0}
+.role{font-family:var(--display);font-weight:500;font-size:clamp(1.05rem,2.4vw,1.35rem);color:var(--signal);margin:18px 0 22px}
+.lede{max-width:34em;font-size:1.3rem;margin:0 0 28px}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:44px}
+.btn{font-family:var(--display);font-weight:500;font-size:.98rem;padding:12px 20px;border-radius:999px;text-decoration:none;border:1.5px solid var(--ink);color:var(--ink)}
+.btn.main{background:var(--ink);color:var(--bg)}
+.btn:hover{border-color:var(--signal)}
+.scope{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:14px 14px 10px}
+.scope canvas{display:block;width:100%;height:190px}
+.scope p{margin:8px 0 0;font-size:.95rem;color:var(--muted)}
+.two{display:grid;grid-template-columns:1fr 1.4fr;gap:clamp(24px,5vw,64px)}
+.two>h2{margin:0}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:28px 36px;margin-top:32px}
+.facts div{border-left:3px solid var(--signal);padding-left:14px}
+.facts strong{font-family:var(--display);display:block;font-size:1.05rem}
+.facts span{color:var(--muted);font-size:1rem}
+.skills dt{font-family:var(--display);font-weight:700;margin-top:18px}
+.skills dd{margin:2px 0 0;color:var(--muted)}
+ol.tl{list-style:none;margin:0;padding:0 0 0 22px;border-left:2px solid var(--line)}
+ol.tl li{position:relative;padding:0 0 30px 22px}
+ol.tl li::before{content:"";position:absolute;left:-30px;top:9px;width:12px;height:12px;border-radius:50%;background:var(--bg);border:2px solid var(--signal)}
+ol.tl li.now::before{background:var(--signal)}
+.when{font-family:var(--display);font-size:.9rem;color:var(--warm);font-weight:500}
+.org{color:var(--muted);font-size:1.02rem}
+ol.tl p{margin:6px 0 0;max-width:40em}
+.proj{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:36px 40px}
+.proj ul,.plain{margin:10px 0 0;padding:0;list-style:none}
+.proj li{padding:5px 0;border-bottom:1px solid var(--line)}
+.proj h3{color:var(--signal)}
+.pubs{counter-reset:p;margin:0;padding:0;list-style:none}
+.pubs li{padding:14px 0;border-bottom:1px solid var(--line);font-size:1.02rem}
+.pubs i{color:var(--muted)}
+.plain li{padding:6px 0 6px 18px;position:relative}
+.plain li::before{content:"";position:absolute;left:0;top:.95em;width:7px;height:2px;background:var(--warm)}
+.edu li{padding:10px 0;border-bottom:1px solid var(--line)}
+.edu b{font-family:var(--display)}
+.edu span{display:block;color:var(--muted);font-size:1rem}
+footer{border-top:1px solid var(--line);padding:48px 0 56px}
+footer p{margin:0 0 10px}
+footer .small{color:var(--muted);font-size:.92rem;margin-top:26px}
+@media (max-width:760px){.two{grid-template-columns:1fr}.two>h2{margin-bottom:6px}section{padding:56px 0}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header class="nav"><div class="wrap"><b>Sayantan Sinha</b>
+<nav aria-label="Sections"><a href="#about">About</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#research">Research</a><a href="#credentials">Credentials</a><a href="#contact">Contact</a></nav></div></header>
+
+<main>
+<div class="wrap hero">
+  <h1>Dr. Sayantan Sinha</h1>
+  <p class="role">AI & Machine Learning educator, technical trainer and researcher</p>
+  <p class="lede">I teach students to build working AI: from Python and data analytics to LLM applications. I lead the Business Informatics track at GLA University, Mathura.</p>
+  <div class="btns">
+    <a class="btn main" href="mailto:sayantansinha51@gmail.com">Email me</a>
+    <a class="btn" href="https://www.linkedin.com/in/dr-sayantan-sinha-1b56a567" target="_blank" rel="noopener">LinkedIn profile</a>
+  </div>
+  <div class="scope" role="img" aria-label="Animated plot of a power-system frequency disturbance being damped back to the nominal value by a controller">
+    <canvas id="scope"></canvas>
+    <p>A load disturbance hits the grid, and the controller pulls frequency back to nominal. This is the problem my PhD solved, and the same feedback thinking shapes how I teach machine learning.</p>
+  </div>
+</div>
+
+<section id="about"><div class="wrap">
+  <div class="two">
+    <h2>About</h2>
+    <div>
+      <p style="margin-top:0">I have spent more than eight years teaching Python, machine learning and data analytics through projects instead of slides. My work sits where classroom learning meets the skills employers ask for: mentoring student AI projects, running workshops and faculty development programmes (FDPs), and turning complex ideas into something a first-time learner can build.</p>
+      <p>My doctoral research in electrical engineering focused on power-system control, optimisation and intelligent controllers. That background shows up in how I approach AI: measure, adjust, repeat.</p>
+    </div>
+  </div>
+  <div class="facts">
+    <div><strong>8+ years</strong><span>teaching and training in AI, ML and data</span></div>
+    <div><strong>20+ sessions</strong><span>workshops and trainings on Python, ML and analytics</span></div>
+    <div><strong>11 publications</strong><span>Scopus-indexed, with nine selected below</span></div>
+    <div><strong>PhD, Electrical Engineering</strong><span>Siksha &lsquo;O&rsquo; Anusandhan University, 2022</span></div>
+  </div>
+  <dl class="skills" style="margin-top:36px">
+    <dt>AI and machine learning</dt><dd>Artificial Intelligence, Machine Learning, Deep Learning, Generative AI, LLMs, Agentic AI</dd>
+    <dt>Data and programming</dt><dd>Python, Data Analytics, Data Science, MATLAB, C/C++, Java</dd>
+    <dt>Technical domains</dt><dd>NLP, Computer Vision, Image Processing, Predictive Analytics, Optimisation, IoT</dd>
+    <dt>Teaching and leadership</dt><dd>Technical Training, Curriculum Development, Workshop and FDP Delivery, Project Mentoring</dd>
+    <dt>Research</dt><dd>Power-System Stability and Control, Automatic Generation Control, Hybrid Optimisation, Fuzzy Logic</dd>
+  </dl>
+</div></section>
+
+<section id="experience"><div class="wrap">
+  <h2>Experience</h2>
+  <ol class="tl">
+    <li class="now"><span class="when">Aug 2025 to present</span><h3>Track Owner, Business Informatics</h3><div class="org">GLA University</div><p>Lead the specialisation, aligning its learning focus with business technology, analytics, AI-enabled applications and industry-relevant skills.</p></li>
+    <li class="now"><span class="when">Aug 2023 to present</span><h3>Technical Trainer</h3><div class="org">GLA University</div><p>Design and deliver hands-on training in AI, machine learning, Python and emerging technologies, with practical materials and project-based activities that build student readiness.</p></li>
+    <li><span class="when">Feb 2023 to Mar 2026</span><h3>AI/ML Mentor</h3><div class="org">Karkhana Makerspace</div><p>Mentored learners through AI/ML concepts and application-oriented projects, supporting problem-solving and experimentation.</p></li>
+    <li><span class="when">Apr 2019 to Mar 2026</span><h3>Project Mentor and Publication Manager</h3><div class="org">Karkhana Makerspace</div><p>Guided learners and teams through technical projects and research communication.</p></li>
+    <li><span class="when">Oct 2022 to Aug 2023</span><h3>AI & ML Subject Matter Expert</h3><div class="org">IBM Innovation Centre for Education (IBM-ICE)</div><p>Contributed AI/ML expertise to educational initiatives and learning programmes.</p></li>
+    <li><span class="when">Jun 2021 to Aug 2022</span><h3>Subject Matter Expert</h3><div class="org">SciComm</div><p>Supported technical content and learning initiatives.</p></li>
+    <li><span class="when">Aug 2015 to May 2021</span><h3>Research Scholar and Teaching Support</h3><div class="org">Siksha &lsquo;O&rsquo; Anusandhan University (ITER)</div><p>Taught MATLAB, ECES laboratory and power-system/FACTS simulation while completing doctoral research on optimal hybrid control for frequency regulation of restructured power systems.</p></li>
+    <li><span class="when">Jul 2019 to Oct 2019</span><h3>Teaching Assistant</h3><div class="org">Neelachal Polytechnic</div></li>
+  </ol>
+
+  <h2 style="margin-top:56px">Training and guest lectures</h2>
+  <ul class="plain">
+    <li>Delivered FDPs on data handling, preprocessing, analytics and machine learning.</li>
+    <li>IBM guest lecture on NLP and AI in Robotics at KARE, Madurai.</li>
+    <li>Training at GLA University on data mining, predictive analysis, cognitive analytics, AI and robotics.</li>
+    <li>Guest lecture at Sri Sri University on applied statistics and data warehousing, plus IBM T3 training on AI/ML.</li>
+    <li>AI/ML mentoring and project support through Karkhana Makerspace and Cantilever Labs engagements.</li>
+  </ul>
+</div></section>
+
+<section id="projects"><div class="wrap">
+  <h2>Selected projects</h2>
+  <div class="proj">
+    <div><h3>Language and tutoring</h3><ul class="plain"><li>LLM-based ATS system</li><li>E-Tutor using LLMs</li><li>IBM Watson chatbot</li><li>Sentiment analysis (Twitter, Facebook)</li><li>WhatsApp chat analysis</li></ul></div>
+    <div><h3>Computer vision</h3><ul class="plain"><li>AI handwritten equation solver</li><li>Driver drowsiness detection</li><li>Automatic attendance monitoring</li><li>Brick detection with OpenCV</li><li>CNN-based medical image classification</li><li>Image classification and augmentation</li></ul></div>
+    <div><h3>Prediction and recommendation</h3><ul class="plain"><li>Customer churn detection</li><li>Stock market prediction</li><li>E-commerce recommender system</li><li>Music genre classification with deep learning</li></ul></div>
+  </div>
+</div></section>
+
+<section id="research"><div class="wrap">
+  <h2>Research publications</h2>
+  <ol class="pubs">
+    <li>Debnath, Sinha &amp; Mallick (2017). Application of fuzzy-PIDF controller for automatic generation control using termite correlation PSO algorithm. <i>International Review of Automatic Control</i>, 10(5).</li>
+    <li>Debnath, Sinha &amp; Mallick (2018). Automatic generation control including solar thermal power generation with Fuzzy-PID controller with derivative filter. <i>International Journal of Renewable Energy Research</i>, 8(1), 26&ndash;35.</li>
+    <li>Debnath, Sinha &amp; Mallick (2017). Application of Fuzzy-PIDF controller for automatic generation control using JAYA algorithm. <i>International Journal of Pure and Applied Mathematics</i>, 114(9), 51&ndash;61.</li>
+    <li>Sinha &amp; Mallick (2019). Frequency regulation of renewable energy integrated deregulated power system using novel optimization scheme. <i>International Journal of Recent Technology and Engineering</i>, 8(1).</li>
+    <li>Sinha, Mallick &amp; Pattnaik (2020). Frequency regulation of a power system integrated with renewables using a novel DE-DA optimized controller. <i>International Journal of Mathematical Modelling and Numerical Optimization</i>, 10(1), 1&ndash;27.</li>
+    <li>Bhatter, Verma &amp; Sinha (2020). Application of IoT in predictive maintenance using Long-Range Communication (LoRa). In <i>Innovation in Electrical Power Engineering, Communication, and Computing Technology</i>, Springer, 147&ndash;155.</li>
+    <li>Bhatter, Sinha &amp; Sharma (2021). Design of chatbots using Node-RED. In <i>Green Technology for Smart City and Society</i>, Springer, 81&ndash;89.</li>
+    <li>Sinha &amp; Mallick (2020). Frequency regulation of electric vehicles integrated multi-area power system under deregulated scenario using novel dual mode controller. In <i>Advances in Electrical Control and Signal Systems</i>, Springer, 89&ndash;108.</li>
+    <li>Sinha et al. (2021). Frequency regulation of wind energy integrated power system using a novel optimized type II fuzzy tilted integral derivative controller. <i>International Journal of Emerging Electric Power Systems</i>.</li>
+  </ol>
+</div></section>
+
+<section id="credentials"><div class="wrap">
+  <div class="two">
+    <div><h2>Education</h2>
+      <ul class="plain edu" style="margin:0">
+        <li><b>PhD, Electrical Engineering</b><span>Siksha &lsquo;O&rsquo; Anusandhan University, 2022. Optimal hybrid control design for frequency regulation of restructured power systems.</span></li>
+        <li><b>M.Tech, Power System & Power Electronics</b><span>Siksha &lsquo;O&rsquo; Anusandhan University, 2015</span></li>
+        <li><b>B.Tech, Electrical Engineering</b><span>West Bengal University of Technology, 2013</span></li>
+      </ul></div>
+    <div><h2>Certifications</h2>
+      <ul class="plain" style="margin:0">
+        <li>Master&rsquo;s in Artificial Intelligence, Purdue University (online, with Simplilearn)</li>
+        <li>IBM, Data Science Methodologies</li>
+        <li>IBM, Data Analytics Using Python</li>
+        <li>IBM, Machine Learning Using Python</li>
+        <li>IBM, Deep Learning Using Python</li>
+        <li>IBM, Python for Data Science (Aug 2022)</li>
+      </ul></div>
+  </div>
+</div></section>
+</main>
+
+<footer id="contact"><div class="wrap">
+  <h2>Get in touch</h2>
+  <p>For workshops, guest lectures, curriculum collaboration or student project mentoring, write to me.</p>
+  <p><a href="mailto:sayantansinha51@gmail.com">sayantansinha51@gmail.com</a><br><a href="mailto:sayantan.sinha@gla.ac.in">sayantan.sinha@gla.ac.in</a><br><a href="https://www.linkedin.com/in/dr-sayantan-sinha-1b56a567" target="_blank" rel="noopener">linkedin.com/in/dr-sayantan-sinha-1b56a567</a></p>
+  <p class="small">Mathura, Uttar Pradesh, India</p>
+</div></footer>
+
+<script>
+(function(){
+  var c=document.getElementById('scope'),ctx=c.getContext('2d');
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var W,H,dpr,hist=[],x=0,v=0,t=0,next=40,dist=0;
+  function css(n){return getComputedStyle(document.documentElement).getPropertyValue(n).trim()}
+  function size(){dpr=window.devicePixelRatio||1;W=c.clientWidth;H=c.clientHeight;c.width=W*dpr;c.height=H*dpr;ctx.setTransform(dpr,0,0,dpr,0,0)}
+  function step(){
+    var w=0.16,z=0.09;
+    t++; dist=0;
+    if(t===next){dist=(Math.random()<.5?-1:1)*(0.8+Math.random()*.5);next=t+420}
+    v+=(-2*z*w*v-w*w*x)+dist*0.5;
+    x+=v;
+    hist.push(x); if(hist.length>Math.ceil(W/2.2)) hist.shift();
+  }
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    var line=css('--line'),sig=css('--signal'),warm=css('--warm'),mut=css('--muted');
+    ctx.strokeStyle=line;ctx.lineWidth=1;ctx.setLineDash([]);
+    for(var i=1;i<4;i++){ctx.beginPath();ctx.moveTo(0,H*i/4);ctx.lineTo(W,H*i/4);ctx.stroke()}
+    ctx.setLineDash([5,5]);ctx.strokeStyle=warm;ctx.beginPath();ctx.moveTo(0,H/2);ctx.lineTo(W,H/2);ctx.stroke();ctx.setLineDash([]);
+    ctx.fillStyle=mut;ctx.font='12px "Bricolage Grotesque",system-ui,sans-serif';
+    ctx.fillText('nominal frequency',8,H/2-6);ctx.fillText('\u0394f',W-24,16);
+    ctx.strokeStyle=sig;ctx.lineWidth=2.2;ctx.lineJoin='round';ctx.beginPath();
+    var n=hist.length,off=W-n*2.2;
+    for(var j=0;j<n;j++){var px=off+j*2.2,py=H/2-hist[j]*H*0.8;py=Math.max(6,Math.min(H-6,py));j?ctx.lineTo(px,py):ctx.moveTo(px,py)}
+    ctx.stroke();
+  }
+  function frame(){step();draw();requestAnimationFrame(frame)}
+  size();
+  window.addEventListener('resize',function(){size();if(reduce)staticPlot();else draw()});
+  function staticPlot(){
+    hist=[];x=0;v=0;
+    for(var k=0;k<Math.ceil(W/2.2);k++){ if(k===20){v+=0.5*1.1} var w=0.16,z=0.09; v+=(-2*z*w*v-w*w*x); x+=v; hist.push(x)}
+    draw();
+  }
+  if(reduce)staticPlot();else{t=0;next=30;frame()}
+})();
+</script>
+</body>
+</html>
